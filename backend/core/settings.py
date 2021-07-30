@@ -47,6 +47,9 @@ INSTALLED_APPS = [
 
     # 3rd Party
     'rest_framework',
+
+    # Local
+    'blog_api.apps.BlogApiConfig',
 ]
 
 MIDDLEWARE = [
