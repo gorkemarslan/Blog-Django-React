@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'corsheaders',
 
     # Local
+    'users.apps.UsersConfig',
     'blog_api.apps.BlogApiConfig',
 ]
 
@@ -138,6 +139,9 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Custom user model
+AUTH_USER_MODEL = "users.CustomUser"
 
 # Django REST Framework
 REST_FRAMEWORK = {
