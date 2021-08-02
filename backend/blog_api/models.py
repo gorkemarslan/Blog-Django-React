@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-from django.contrib.auth.models import User
+from django.conf import settings
 
 
 class PublishedManager(models.Manager):
@@ -20,7 +20,7 @@ class Post(models.Model):
         ('draft', 'Draft'),
         ('published', 'Published'),
     )
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='posts')
     tag = models.ForeignKey(Tag, on_delete=models.PROTECT, null=True, blank=True)
     title = models.CharField(max_length=255)
     content = models.TextField(default=timezone.now)
